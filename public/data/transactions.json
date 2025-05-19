@@ -1,0 +1,170 @@
+[
+  {
+    "customerId": 1,
+    "name": "sabari",
+    "transactionId": "T1001",
+    "amount": 120,
+    "date": "2025-04-15"
+  },
+  {
+    "customerId": 1,
+    "name": "sabari",
+    "transactionId": "T1002",
+    "amount": 75,
+    "date": "2025-03-10"
+  },
+  {
+    "customerId": 1,
+    "name": "sabari",
+    "transactionId": "T1020",
+    "amount": 140,
+    "date": "2025-03-10"
+  },
+  {
+    "customerId": 1,
+    "name": "sabari",
+    "transactionId": "T1003",
+    "amount": 200,
+    "date": "2025-02-25"
+  },
+
+  {
+    "customerId": 2,
+    "name": "nathan",
+    "transactionId": "T1004",
+    "amount": 130,
+    "date": "2025-03-05"
+  },
+  {
+    "customerId": 2,
+    "name": "nathan",
+    "transactionId": "T1005",
+    "amount": 45,
+    "date": "2025-01-20"
+  },
+  {
+    "customerId": 2,
+    "name": "nathan",
+    "transactionId": "T1006",
+    "amount": 90,
+    "date": "2024-12-10"
+  },
+
+  {
+    "customerId": 3,
+    "name": "aaquib",
+    "transactionId": "T1007",
+    "amount": 110,
+    "date": "2025-04-01"
+  },
+  {
+    "customerId": 3,
+    "name": "aaquib",
+    "transactionId": "T1008",
+    "amount": 55,
+    "date": "2024-11-11"
+  },
+
+  {
+    "customerId": 4,
+    "name": "nick",
+    "transactionId": "T1009",
+    "amount": 35,
+    "date": "2023-06-22"
+  },
+  {
+    "customerId": 4,
+    "name": "nick",
+    "transactionId": "T1010",
+    "amount": 140,
+    "date": "2025-02-01"
+  },
+
+  {
+    "customerId": 5,
+    "name": "nazar",
+    "transactionId": "T1011",
+    "amount": 60,
+    "date": "2025-03-17"
+  },
+
+  {
+    "customerId": 6,
+    "name": "maryana",
+    "transactionId": "T1012",
+    "amount": 200,
+    "date": "2025-04-20"
+  },
+
+  {
+    "customerId": 7,
+    "name": "nazar",
+    "transactionId": "T1013",
+    "amount": 100,
+    "date": "2022-07-12"
+  },
+
+  {
+    "customerId": 8,
+    "name": "Khrytyana",
+    "transactionId": "T1014",
+    "amount": 51,
+    "date": "2025-03-31"
+  },
+
+  {
+    "customerId": 9,
+    "name": "Artim",
+    "transactionId": "T1015",
+    "amount": 20,
+    "date": "2025-01-12"
+  },
+
+  {
+    "customerId": 10,
+    "name": "mykola bob",
+    "transactionId": "T1016",
+    "amount": 155,
+    "date": "2021-08-08"
+  },
+
+  {
+    "customerId": 11,
+    "name": "carolina",
+    "transactionId": "T1017",
+    "amount": 99.99,
+    "date": "2025-02-28"
+  },
+
+  {
+    "customerId": 12,
+    "name": "sri",
+    "transactionId": "T1018",
+    "amount": 101,
+    "date": "2025-04-05"
+  },
+
+  {
+    "customerId": 13,
+    "name": "kishan",
+    "transactionId": "T1019",
+    "amount": 60.5,
+    "date": "2023-03-19"
+  },
+
+  {
+    "customerId": 14,
+    "name": "krystol",
+    "transactionId": "T1020",
+    "amount": 80,
+    "date": "2025-02-14"
+  },
+
+  {
+    "customerId": 15,
+    "name": "pallab",
+    "transactionId": "T1021",
+    "amount": 300,
+    "date": "2025-03-08"
+  }
+]
