@@ -9,22 +9,22 @@ const calculateRewardPoints = (amount) => {
 };
 
 const calculateRewardsByMonth = (transactions) => {
-  const grouped = {};
+  const rewardsSummary = {};
 
   transactions.forEach((transaction) => {
     const date = new Date(transaction.date);
     const key = `${date.getFullYear()}-${date.getMonth() + 1}`;
     const points = calculateRewardPoints(transaction.amount);
 
-    if (!grouped[key]) {
-      grouped[key] = { total: 0, transactions: [] };
+    if (!rewardsSummary[key]) {
+      rewardsSummary[key] = { total: 0, transactions: [] };
     }
 
-    grouped[key].total += points;
-    grouped[key].transactions.push({ ...transaction, points });
+    rewardsSummary[key].total += points;
+    rewardsSummary[key].transactions.push({ ...transaction, points });
   });
 
-  return grouped;
+  return rewardsSummary;
 };
 
 export { calculateRewardPoints, calculateRewardsByMonth };

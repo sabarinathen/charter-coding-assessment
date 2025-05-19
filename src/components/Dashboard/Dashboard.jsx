@@ -6,6 +6,8 @@ import CustomerList from "../CustomerList/customerList";
 import CustomerDetails from "../CustomerDetails/CustomerDetails";
 import { DASHBOARD_CONSTANTS } from "../../helper/constants";
 
+import "../../App.css";
+
 const Dashboard = () => {
   const [transactions, setTransactions] = useState([]);
   const [selectedCustomer, setSelectedCustomer] = useState(null);
@@ -35,15 +37,7 @@ const Dashboard = () => {
   if (loading) return <p>{DASHBOARD_CONSTANTS.loading}</p>;
 
   return (
-    <div
-      style={{
-        display: "flex",
-        gap: "40px",
-        width: "100%",
-        justifyContent: "flex-start",
-        alignItems: "center",
-      }}
-    >
+    <div className="dashboardContainer">
       <CustomerList
         customers={customers}
         transactions={transactions}
