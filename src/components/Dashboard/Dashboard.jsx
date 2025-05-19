@@ -4,6 +4,7 @@ import { fetchTransactions } from "../../helper/api/transactionService";
 import { logEvent } from "../../helper/utils/logger";
 import CustomerList from "../CustomerList/customerList";
 import CustomerDetails from "../CustomerDetails/CustomerDetails";
+import { DASHBOARD_CONSTANTS } from "../../helper/constants";
 
 const Dashboard = () => {
   const [transactions, setTransactions] = useState([]);
@@ -31,7 +32,7 @@ const Dashboard = () => {
     new Set(transactions.map((t) => t.customerId))
   ).map((id) => ({ customerId: id }));
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>{DASHBOARD_CONSTANTS.loading}</p>;
 
   return (
     <div

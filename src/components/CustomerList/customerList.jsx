@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import '../../App.css';
+import "../../App.css";
+import { CUSTOMER_LIST } from "../../helper/constants";
 
 const CustomerList = ({ customers, onSelect, transactions }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,13 +19,15 @@ const CustomerList = ({ customers, onSelect, transactions }) => {
   };
 
   const getUserName = (id) => {
-    const selectedCustomer = transactions.find((item) => item.customerId === id);
+    const selectedCustomer = transactions.find(
+      (item) => item.customerId === id
+    );
     return selectedCustomer ? selectedCustomer.name : "Unnamed Customer";
   };
 
   return (
     <div className="customerList">
-      <h3>Customers</h3>
+      <h3>{CUSTOMER_LIST.customerHeading}</h3>
       <ul>
         {paginated.map((c) => (
           <li key={c.customerId}>
@@ -39,15 +42,14 @@ const CustomerList = ({ customers, onSelect, transactions }) => {
           onClick={() => handlePageChange(-1)}
           disabled={currentPage === 1}
         >
-          Prev
+          {CUSTOMER_LIST.next}
         </button>
-        &nbsp; Page {currentPage} of {totalPages}
-        &nbsp;
+        {`${CUSTOMER_LIST.page} ${currentPage} ${CUSTOMER_LIST.of} ${totalPages}`}
         <button
           onClick={() => handlePageChange(1)}
           disabled={currentPage === totalPages}
         >
-          Next
+          {CUSTOMER_LIST.next}
         </button>
       </div>
     </div>
