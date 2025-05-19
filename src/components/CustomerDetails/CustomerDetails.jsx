@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import PropTypes from "prop-types";
-import { groupRewardsByMonth } from "../../helper/utils";
-import { MONTHS, YEARS } from "../../helper/constants";
+import { calculateRewardsByMonth } from "../../helper/utils";
+import { CUSTOMER_DETAILS, MONTHS, YEARS } from "../../helper/constants";
 import "../../App.css";
 
 const CustomerDetails = ({ customerId, transactions }) => {
@@ -22,7 +22,7 @@ const CustomerDetails = ({ customerId, transactions }) => {
 
   useEffect(() => {
     const userTxns = transactions.filter((t) => t.customerId === customerId);
-    const rewardsGrouped = groupRewardsByMonth(userTxns);
+    const rewardsGrouped = calculateRewardsByMonth(userTxns);
     setMonthlyRewards(rewardsGrouped);
     const firstKey = Object.keys(rewardsGrouped)[0] || "";
     setSelectedMonthKey(firstKey);
@@ -76,7 +76,7 @@ const CustomerDetails = ({ customerId, transactions }) => {
         setFilterDataAvailable(true);
       } else {
         setFiltered({});
-        setFilterDataAvailable(true); 
+        setFilterDataAvailable(true);
       }
     }
   }, [selectedMonth, selectedYear, monthlyRewards]);
@@ -102,15 +102,19 @@ const CustomerDetails = ({ customerId, transactions }) => {
   return (
     <div className="customerDetails">
       <div className="bg"></div>
-      <h3>Customer #{getUserName(customerId)} Rewards</h3>
+      <h3>
+        {CUSTOMER_DETAILS.customerDesc}
+        <span className="customerName">{getUserName(customerId)}</span>
+        {CUSTOMER_DETAILS.rewards}
+      </h3>
       <p>
-        <strong>Total Points:</strong> {totalPoints}
+        <strong>{CUSTOMER_DETAILS.totalPoints}</strong> {totalPoints}
       </p>
 
-      <h4>Monthly Breakdown:</h4>
+      <h4>{CUSTOMER_DETAILS.monthlyReport}</h4>
       <div style={{ marginBottom: "16px" }}>
         <label>
-          Month:&nbsp;
+          {CUSTOMER_DETAILS.monthLabel}
           <select
             value={selectedMonth}
             onChange={(e) => setSelectedMonth(e.target.value)}
@@ -122,9 +126,9 @@ const CustomerDetails = ({ customerId, transactions }) => {
             ))}
           </select>
         </label>
-        &nbsp;&nbsp;
+
         <label>
-          Year:&nbsp;
+          {CUSTOMER_DETAILS.yearLabel}
           <select
             value={selectedYear}
             onChange={(e) => setSelectedYear(Number(e.target.value))}
@@ -142,7 +146,7 @@ const CustomerDetails = ({ customerId, transactions }) => {
         {Object.entries(displaySource).map(([monthKey, data]) => (
           <li key={monthKey}>
             <button onClick={() => setSelectedMonthKey(monthKey)}>
-              {monthKey} - {data.total} points
+              {monthKey} - {data.total} {CUSTOMER_DETAILS.points}
             </button>
           </li>
         ))}
@@ -150,14 +154,16 @@ const CustomerDetails = ({ customerId, transactions }) => {
 
       {selectedMonthKey && (
         <>
-          <h4>Transactions for {selectedMonthKey}</h4>
+          <h4>
+            {CUSTOMER_DETAILS.transactionDesc} {selectedMonthKey}
+          </h4>
           {selectedData?.transactions?.length > 0 ? (
             <table border="1">
               <thead>
                 <tr>
-                  <th>Date</th>
-                  <th>Transaction Amount</th>
-                  <th>Earned Points</th>
+                  <th>{CUSTOMER_DETAILS.date}</th>
+                  <th>{CUSTOMER_DETAILS.transactionAmount}</th>
+                  <th>{CUSTOMER_DETAILS.earnedPoints}</th>
                 </tr>
               </thead>
               <tbody>
@@ -171,7 +177,7 @@ const CustomerDetails = ({ customerId, transactions }) => {
               </tbody>
             </table>
           ) : (
-            <p>No transactions</p>
+            <p>{CUSTOMER_DETAILS.noTransaction}</p>
           )}
         </>
       )}
